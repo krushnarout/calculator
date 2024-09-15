@@ -1,0 +1,20 @@
+{
+  "name": "image-compress",
+  "version": "1.0.0",
+  "description": "CLI tool for image compression using sharp.",
+  "main": "src/cli.js",
+  "bin": {
+    "compress": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js"
+  },
+  "keywords": [],
+  "author": "Krushna Kanta Rout",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "sharp": "^0.33.5",
+    "yargs": "^17.7.2"
+  }
+}
