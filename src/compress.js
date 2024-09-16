@@ -2,17 +2,17 @@ const sharp = require("sharp");
 const fs = require("fs-extra");
 const path = require("path");
 
-async function compressImage(inputPath, outputPath, format) {
+async function compressImage(inputPath, outputPath, format, quality) {
   const image = sharp(inputPath);
 
-  const buffer = await image.toFormat(format, { quality: 90 }).toBuffer();
+  const buffer = await image.toFormat(format, { quality }).toBuffer();
 
   await fs.ensureDir(path.dirname(outputPath));
 
   await fs.writeFile(outputPath, buffer);
 }
 
-async function compressDirectory(inputDir, outputDir, format) {
+async function compressDirectory(inputDir, outputDir, format, quality) {
   const files = await fs.readdir(inputDir);
 
   for (const file of files) {
@@ -29,7 +29,7 @@ async function compressDirectory(inputDir, outputDir, format) {
       : path.join(inputDir, outputFileName);
 
     try {
-      await compressImage(inputPath, outputPath, format);
+      await compressImage(inputPath, outputPath, format, quality);
       console.log(`Compressed: ${file} to ${outputFileName}`);
     } catch (error) {
       console.error(`Failed to compress ${file}: ${error.message}`);
