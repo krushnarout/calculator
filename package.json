@@ -4,7 +4,7 @@
   "description": "CLI tool for image compression using sharp.",
   "main": "src/cli.js",
   "bin": {
-    "compress": "./src/cli.js"
+    "img-compress": "./src/cli.js"
   },
   "scripts": {
     "start": "node src/cli.js"
