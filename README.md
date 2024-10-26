@@ -26,48 +26,78 @@ To make the CLI tool globally accessible, link the package:
 npm install -g .
 ```
 
+## 1. Install the CLI Tool Globally
+
+If you've built your CLI tool and want to use it globally, you need to install it globally via npm:
+
+Navigate to your project’s root directory (where package.json is located), and run this command to install your tool globally:
+
+```bash
+npm install -g .
+```
+
+After installing globally, you can use the img-compress command from anywhere in your terminal.
+
+## 2. Use the CLI Tool Without Installation (via npx)
+
+You can also run the CLI tool directly using npx without installing it globally. This avoids the need for a global installation.
+
 ## Usage
 
-Once the package is installed globally, you can use the `compress` command to compress images.
+Once the package is installed globally or used via npx, you can use the `img-compress` command to compress images.
 
-### Command Options
+## Command Options
 
 - `--input, -i` (required): Path to the input directory containing images.
 - `--output, -o` (optional): Path to the output directory. If not provided, it will compress images in place.
 - `--format, -f` (optional): Specify the output image format (`jpg`, `jpeg`, `png`, `webp`). Defaults to the original image format.
 - `--quality, -q` (optional): Specify the quality of the compression (1-100). Defaults to 90.
 
-### Example Commands
+## Example Commands
+
+### 1. Using the CLI Tool After Global Installation
 
 #### Compress images in the current directory and save them to the same directory
 
 ```bash
-compress --input ./images
+img-compress --input ./images
 ```
 
 #### Compress images in the current directory and output them to a new directory
 
 ```bash
-compress --input ./images --output ./compressed
+img-compress --input ./images --output ./compressed
 ```
 
 #### Compress images and convert them to `webp` format
 
 ```bash
-compress --input ./images --output ./compressed --format webp
+img-compress --input ./images --output ./compressed --format webp
 ```
 
 #### Compress images with a specific quality (e.g., 75)
 
 ```bash
-compress --input ./images --output ./compressed --quality 75
+img-compress --input ./images --output ./compressed --quality 75
+```
+
+### 2. Using the CLI Tool Without Installation (via `npx`)
+
+#### If you haven’t installed the tool globally, you can use `npx` to run the same commands
+
+```bash
+npx img-compress --input ./images
+```
+
+```bash
+npx img-compress --input ./images --output ./compressed --format webp
 ```
 
 ### Sample Output
 
 ```bash
-Compressing: image1.jpg
-Compressing: image2.png
+Compressing: image1.jpg to image1.webp
+Compressing: image2.png to image2.webp
 Compression complete.
 ```
 
@@ -84,4 +114,4 @@ If you want to contribute or make modifications to this tool:
 
 1. Clone the repository.
 2. Install dependencies with `npm install`.
-3. Use `npm link` to set up a local symlink for the global `compress` command during development.
+3. Use `npm link` to set up a local symlink for the global `img-compress` command during development.
