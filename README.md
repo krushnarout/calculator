@@ -101,6 +101,12 @@ Compressing: image2.png to image2.webp
 Compression complete.
 ```
 
+## Demo
+
+To better understand how to use the `img-compress` CLI tool, check out this screen recording. It demonstrates running the tool with various options like specifying input and output directories and adjusting image format.
+
+https://github.com/user-attachments/assets/8c40a974-b61c-4742-9c63-a0a9b5a064ac
+
 ## Supported Formats
 
 - `.jpg`
