@@ -23,8 +23,10 @@ npm install
 To make the CLI tool globally accessible, link the package:
 
 ```bash
-npm install -g .
+npm link
 ```
+
+This step is essential for the tool to function correctly, as it allows you to use the `img-compress` command from anywhere in your terminal.
 
 ## 1. Install the CLI Tool Globally
 
@@ -36,7 +38,7 @@ Navigate to your project’s root directory (where package.json is located), and
 npm install -g .
 ```
 
-After installing globally, you can use the img-compress command from anywhere in your terminal.
+After installing globally, you can use the `img-compress` command from anywhere in your terminal.
 
 ## 2. Use the CLI Tool Without Installation (via npx)
 
